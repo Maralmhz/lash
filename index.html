@@ -93,58 +93,34 @@
         }
         .termo-body p { margin-bottom: 10px; }
 
-        .termo-progress-bar-wrap {
-            height: 4px;
-            background: #E0D5C7;
-        }
+        .termo-progress-bar-wrap { height: 4px; background: #E0D5C7; }
         .termo-progress-bar {
-            height: 4px;
-            width: 0%;
+            height: 4px; width: 0%;
             background: linear-gradient(90deg, #A48968, #8B7355);
             transition: width 0.2s;
         }
 
         .termo-scroll-hint {
-            text-align: center;
-            font-size: 12px;
-            padding: 8px 12px;
-            font-style: italic;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+            text-align: center; font-size: 12px; padding: 8px 12px;
+            font-style: italic; display: flex; align-items: center;
+            justify-content: center; gap: 6px;
         }
         .termo-scroll-hint.pending { color: #A48968; }
         .termo-scroll-hint.done { color: #5a9a5a; font-style: normal; font-weight: 600; }
 
         .termo-check-area {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 14px 18px;
-            background: #FAF7F5;
-            border-top: 1px solid #E0D5C7;
-            transition: opacity 0.3s;
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 14px 18px; background: #FAF7F5;
+            border-top: 1px solid #E0D5C7; transition: opacity 0.3s;
         }
-        .termo-check-area.locked {
-            opacity: 0.4;
-            pointer-events: none;
-        }
+        .termo-check-area.locked { opacity: 0.4; pointer-events: none; }
         .termo-check-area input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            accent-color: #A48968;
-            cursor: pointer;
-            margin-top: 2px;
+            width: 20px; height: 20px; min-width: 20px;
+            accent-color: #A48968; cursor: pointer; margin-top: 2px;
         }
         .termo-check-area label {
-            font-size: 13px;
-            color: #5D4E3F;
-            font-weight: 500;
-            margin: 0;
-            cursor: pointer;
-            line-height: 1.5;
+            font-size: 13px; color: #5D4E3F; font-weight: 500;
+            margin: 0; cursor: pointer; line-height: 1.5;
         }
 
         .btn-submit {
@@ -156,22 +132,14 @@
         }
         .btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(164, 137, 104, 0.5); }
         .btn-submit:active:not(:disabled) { transform: translateY(0); }
-        .btn-submit:disabled {
-            background: #C8BFB5; box-shadow: none; cursor: not-allowed; transform: none;
-        }
+        .btn-submit:disabled { background: #C8BFB5; box-shadow: none; cursor: not-allowed; transform: none; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
         .btn-submit.loading { animation: pulse 1.5s infinite; }
 
         .aviso-termo {
-            display: none;
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            color: #856404;
-            border-radius: 10px;
-            padding: 12px 16px;
-            font-size: 13px;
-            margin-top: 10px;
-            text-align: center;
+            display: none; background: #fff3cd; border: 1px solid #ffc107;
+            color: #856404; border-radius: 10px; padding: 12px 16px;
+            font-size: 13px; margin-top: 10px; text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -185,7 +153,7 @@
 <body>
 
     <div class="header">
-        <img src="logo.jpg" alt="Beatriz Leão - Lash Designer" class="logo-img">
+        <img src="logo.png" alt="Beatriz Leão - Lash Designer" class="logo-img">
     </div>
 
     <div class="tabs">
@@ -193,7 +161,6 @@
         <button class="tab-button" onclick="showTab('agendamento')">Agendamento</button>
     </div>
 
-    <!-- ABA: FICHA DE ANAMNESE -->
     <div id="tab-ficha" class="tab-content active">
 
         <div class="section-title">Dados Pessoais</div>
@@ -321,7 +288,6 @@
 
     </div>
 
-    <!-- ABA: AGENDAMENTO -->
     <div id="tab-agendamento" class="tab-content">
 
         <div class="section-title">Agendar Horário</div>
