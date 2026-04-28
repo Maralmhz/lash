@@ -63,7 +63,6 @@
             box-shadow: 0 4px 15px rgba(164, 137, 104, 0.3);
         }
 
-        /* ===== TERMO DE RESPONSABILIDADE ===== */
         .termo-container {
             background: #FFF9F5;
             border: 2px solid #E0D5C7;
@@ -148,7 +147,6 @@
             line-height: 1.5;
         }
 
-        /* ===== BOTÃO ENVIAR ===== */
         .btn-submit {
             width: 100%; padding: 18px; border: none; border-radius: 12px;
             background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
@@ -191,14 +189,14 @@
     </div>
 
     <div class="tabs">
-        <button class="tab-button active" onclick="showTab('ficha')">📋 Ficha de Anamnese</button>
-        <button class="tab-button" onclick="showTab('agendamento')">📅 Agendamento</button>
+        <button class="tab-button active" onclick="showTab('ficha')">Ficha de Anamnese</button>
+        <button class="tab-button" onclick="showTab('agendamento')">Agendamento</button>
     </div>
 
     <!-- ABA: FICHA DE ANAMNESE -->
     <div id="tab-ficha" class="tab-content active">
 
-        <div class="section-title">✨ Dados Pessoais</div>
+        <div class="section-title">Dados Pessoais</div>
 
         <div class="form-group">
             <label>Nome completo *</label>
@@ -217,7 +215,7 @@
             <input type="email" id="email" placeholder="seu@email.com">
         </div>
 
-        <div class="section-title">👁️ Informações sobre os Olhos</div>
+        <div class="section-title">Informações sobre os Olhos</div>
 
         <div class="form-group">
             <label>Você usa lentes de contato?</label>
@@ -245,7 +243,7 @@
             <textarea id="qual_alergia" placeholder="Descreva a alergia, se houver..."></textarea>
         </div>
 
-        <div class="section-title">💊 Saúde Geral</div>
+        <div class="section-title">Saúde Geral</div>
 
         <div class="form-group">
             <label>Faz uso de algum medicamento contínuo?</label>
@@ -277,13 +275,13 @@
             <textarea id="observacoes" placeholder="Algo que acha importante informar..."></textarea>
         </div>
 
-        <div class="section-title">📄 Termo de Responsabilidade</div>
+        <div class="section-title">Termo de Responsabilidade</div>
         <p style="font-size:13px;color:#7D6E5F;margin-bottom:12px;text-align:center;">
             <strong>Leia o termo completamente antes de prosseguir.</strong>
         </p>
 
         <div class="termo-container">
-            <div class="termo-header">📜 TERMO DE RESPONSABILIDADE — EXTENSÃO DE CÍLIOS</div>
+            <div class="termo-header">TERMO DE RESPONSABILIDADE — EXTENSÃO DE CÍLIOS</div>
             <div class="termo-body" id="termoBody">
                 <p><strong>IDENTIFICAÇÃO DAS PARTES:</strong> Este termo é celebrado entre <strong>Beatriz Leão – Lash Designer</strong> (doravante PRESTADORA) e a cliente identificada nesta ficha (doravante CLIENTE).</p>
                 <p><strong>1. DO PROCEDIMENTO:</strong> A extensão de cílios é um procedimento estético que consiste na aplicação de fios sintéticos nos cílios naturais com cola específica para uso cosmético, visando aumentar o volume e/ou comprimento dos cílios.</p>
@@ -302,7 +300,7 @@
             </div>
 
             <div class="termo-scroll-hint pending" id="termoHint">
-                ⬇️ Role até o final para liberar a confirmação
+                Role até o final para liberar a confirmação
             </div>
 
             <div class="termo-check-area locked" id="termoCheckArea">
@@ -314,11 +312,11 @@
         </div>
 
         <div class="aviso-termo" id="avisoTermo">
-            ⚠️ Você precisa <strong>ler o termo completo</strong> e <strong>marcar a confirmação</strong> antes de enviar.
+            Você precisa <strong>ler o termo completo</strong> e <strong>marcar a confirmação</strong> antes de enviar.
         </div>
 
         <button class="btn-submit" id="btnEnviar" onclick="enviarFicha()">
-            📱 Enviar Ficha via WhatsApp
+            Enviar Ficha via WhatsApp
         </button>
 
     </div>
@@ -326,7 +324,7 @@
     <!-- ABA: AGENDAMENTO -->
     <div id="tab-agendamento" class="tab-content">
 
-        <div class="section-title">📅 Agendar Horário</div>
+        <div class="section-title">Agendar Horário</div>
 
         <div class="form-group">
             <label>Seu nome *</label>
@@ -359,7 +357,7 @@
         </div>
 
         <button class="btn-submit" onclick="enviarAgendamento()">
-            📱 Solicitar Agendamento via WhatsApp
+            Solicitar Agendamento via WhatsApp
         </button>
 
     </div>
@@ -397,7 +395,7 @@
                     termoCheckArea.classList.remove('locked');
                     termoHint.classList.remove('pending');
                     termoHint.classList.add('done');
-                    termoHint.textContent = '✅ Termo lido! Agora confirme sua leitura abaixo.';
+                    termoHint.textContent = 'Termo lido! Agora confirme sua leitura abaixo.';
                 }
             }
         });
@@ -431,7 +429,7 @@
             const extensao = getSelected('extensao') || 'Não informado';
             const reacao = getSelected('reacao') || 'Não informado';
             const obs = document.getElementById('observacoes').value.trim() || '-';
-            const msg = `📋 *FICHA DE ANAMNESE — EXTENSÃO DE CÍLIOS*\n━━━━━━━━━━━━━━━━━━━━\n👤 *DADOS PESSOAIS*\n• Nome: ${nome}\n• Nascimento: ${nascimento}\n• Telefone: ${telefone}\n• E-mail: ${email || '-'}\n\n👁️ *INFORMAÇÕES DOS OLHOS*\n• Usa lentes de contato: ${lentes}\n• Olhos sensíveis: ${sensivel}\n• Tem alergia: ${alergia}\n• Qual alergia: ${qualAlergia}\n\n💊 *SAÚDE GERAL*\n• Usa medicamento: ${medicamento}\n• Qual medicamento: ${qualMedicamento}\n• Já fez extensão antes: ${extensao}\n• Reação anterior: ${reacao}\n• Observações: ${obs}\n\n✅ *TERMO DE RESPONSABILIDADE: LIDO E ACEITO*\n━━━━━━━━━━━━━━━━━━━━`;
+            const msg = `FICHA DE ANAMNESE - EXTENSAO DE CILIOS\n--------------------\nDADOS PESSOAIS\nNome: ${nome}\nNascimento: ${nascimento}\nTelefone: ${telefone}\nE-mail: ${email || '-'}\n\nINFORMACOES DOS OLHOS\nUsa lentes de contato: ${lentes}\nOlhos sensiveis: ${sensivel}\nTem alergia: ${alergia}\nQual alergia: ${qualAlergia}\n\nSAUDE GERAL\nUsa medicamento: ${medicamento}\nQual medicamento: ${qualMedicamento}\nJa fez extensao antes: ${extensao}\nReacao anterior: ${reacao}\nObservacoes: ${obs}\n\nTERMO DE RESPONSABILIDADE: LIDO E ACEITO\n--------------------`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
@@ -446,7 +444,7 @@
             const data = document.getElementById('ag_data').value || 'A combinar';
             const hora = document.getElementById('ag_hora').value || 'A combinar';
             const obs = document.getElementById('ag_obs').value.trim() || '-';
-            const msg = `📅 *SOLICITAÇÃO DE AGENDAMENTO — LASH DESIGNER*\n━━━━━━━━━━━━━━━━━━━━\n👤 Nome: ${nome}\n📱 Telefone: ${telefone}\n💅 Procedimento: ${proc}\n📆 Data preferida: ${data}\n🕐 Horário preferido: ${hora}\n📝 Observações: ${obs}\n━━━━━━━━━━━━━━━━━━━━`;
+            const msg = `SOLICITACAO DE AGENDAMENTO - LASH DESIGNER\n--------------------\nNome: ${nome}\nTelefone: ${telefone}\nProcedimento: ${proc}\nData preferida: ${data}\nHorario preferido: ${hora}\nObservacoes: ${obs}\n--------------------`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
