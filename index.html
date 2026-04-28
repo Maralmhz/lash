@@ -182,6 +182,18 @@
             <input type="email" id="email" placeholder="seu@email.com">
         </div>
 
+        <div class="section-title">Procedimento</div>
+
+        <div class="form-group">
+            <label>Qual procedimento deseja realizar?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Brasileiro</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Power</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Egípcio</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Fox Eyes</button>
+            </div>
+        </div>
+
         <div class="section-title">Informações sobre os Olhos</div>
 
         <div class="form-group">
@@ -261,15 +273,12 @@
                 <p><strong>8. CONSENTIMENTO:</strong> Ao assinalar a confirmação abaixo, a CLIENTE declara ter lido integralmente este Termo, compreendido seu conteúdo, e consente livremente com a realização do procedimento, assumindo as responsabilidades aqui descritas.</p>
                 <p style="text-align:center;color:#A48968;font-style:italic;margin-top:16px;">— Fim do Termo de Responsabilidade —</p>
             </div>
-
             <div class="termo-progress-bar-wrap">
                 <div class="termo-progress-bar" id="termoProgressBar"></div>
             </div>
-
             <div class="termo-scroll-hint pending" id="termoHint">
                 Role até o final para liberar a confirmação
             </div>
-
             <div class="termo-check-area locked" id="termoCheckArea">
                 <input type="checkbox" id="termoCheck" onchange="atualizarBotao()">
                 <label for="termoCheck">
@@ -386,6 +395,7 @@
                 alert('Por favor, preencha os campos obrigatórios: Nome, Data de nascimento e Telefone.');
                 return;
             }
+            const proc_ficha = getSelected('proc_ficha') || 'Não informado';
             const lentes = getSelected('lentes') || 'Não informado';
             const sensivel = getSelected('sensivel') || 'Não informado';
             const alergia = getSelected('alergia') || 'Não informado';
@@ -395,7 +405,7 @@
             const extensao = getSelected('extensao') || 'Não informado';
             const reacao = getSelected('reacao') || 'Não informado';
             const obs = document.getElementById('observacoes').value.trim() || '-';
-            const msg = `FICHA DE ANAMNESE - EXTENSAO DE CILIOS\n--------------------\nDADOS PESSOAIS\nNome: ${nome}\nNascimento: ${nascimento}\nTelefone: ${telefone}\nE-mail: ${email || '-'}\n\nINFORMACOES DOS OLHOS\nUsa lentes de contato: ${lentes}\nOlhos sensiveis: ${sensivel}\nTem alergia: ${alergia}\nQual alergia: ${qualAlergia}\n\nSAUDE GERAL\nUsa medicamento: ${medicamento}\nQual medicamento: ${qualMedicamento}\nJa fez extensao antes: ${extensao}\nReacao anterior: ${reacao}\nObservacoes: ${obs}\n\nTERMO DE RESPONSABILIDADE: LIDO E ACEITO\n--------------------`;
+            const msg = `FICHA DE ANAMNESE - EXTENSAO DE CILIOS\n--------------------\nDADOS PESSOAIS\nNome: ${nome}\nNascimento: ${nascimento}\nTelefone: ${telefone}\nE-mail: ${email || '-'}\n\nPROCEDIMENTO\nProcedimento: ${proc_ficha}\n\nINFORMACOES DOS OLHOS\nUsa lentes de contato: ${lentes}\nOlhos sensiveis: ${sensivel}\nTem alergia: ${alergia}\nQual alergia: ${qualAlergia}\n\nSAUDE GERAL\nUsa medicamento: ${medicamento}\nQual medicamento: ${qualMedicamento}\nJa fez extensao antes: ${extensao}\nReacao anterior: ${reacao}\nObservacoes: ${obs}\n\nTERMO DE RESPONSABILIDADE: LIDO E ACEITO\n--------------------`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
