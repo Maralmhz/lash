@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatriz Leão - Lash Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f0e8 0%, #e8ddd0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d4af89 0%, #b8956a 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #b8956a;
+            font-family: 'Georgia', serif;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            background: #d4af89;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #d4af89;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #d4af89 0%, #b8956a 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 137, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-submit.loading {
+            animation: pulse 1.5s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">BL</div>
+            </div>
+            <h1>BEATRIZ LEÃO</h1>
+            <div class="subtitle">Lash Designer</div>
+        </div>
+
+        <div class="content">
+            <!-- FICHA DE ANAMNESE -->
+            <div class="section">
+                <div class="section-title">FICHA DE ANAMNESE - Extensão de Cílios</div>
+                
+                <form id="anamneseForm">
+                    <div class="section-title" style="font-size: 16px;">Dados Pessoais</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Data de Nascimento *</label>
+                            <input type="date" id="dataNascimento" name="dataNascimento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Celular *</label>
+                            <input type="tel" id="celular" name="celular" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Profissão</label>
+                            <input type="text" id="profissao" name="profissao">
+                        </div>
+                    </div>
+
+                    <div class="section-title" style="font-size: 16px; margin-top: 30px;">Hábitos Diários</div>
+                    
+                    <div class="form-group">
+                        <label>Usa lente de contato?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="lenteContato" value="sim" id="lenteSim">
+                                <label for="lenteSim">Sim</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="lenteContato" value="nao" id="lenteNao" checked>
+                                <label for="lenteNao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gestante?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="gestante" value="sim" id="gestanteSim">
+                                <label for="gestanteSim">Sim</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="gestante" value="nao" id="gestanteNao" checked>
+                                <label for="gestanteNao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alergias</label>
+                        <textarea id="alergias" name="alergias" placeholder="Descreva alergias a cosméticos ou produtos..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Uso de medicamentos?</label>
+                        <textarea id="medicamentos" name="medicamentos" placeholder="Quais medicamentos..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">ENVIAR FICHA VIA WHATSAPP</button>
+                </form>
+            </div>
+
+            <!-- AGENDAMENTO -->
+            <div class="section">
+                <div class="section-title">AGENDAMENTO</div>
+                
+                <form id="agendamentoForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome Completo *</label>
+                            <input type="text" id="nomeAgendamento" name="nomeAgendamento" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Celular *</label>
+                            <input type="tel" id="celularAgendamento" name="celularAgendamento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Data Desejada *</label>
+                            <input type="date" id="dataAgendamento" name="dataAgendamento" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Horário Desejado *</label>
+                            <input type="time" id="horarioAgendamento" name="horarioAgendamento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observações</label>
+                        <textarea id="observacoes" name="observacoes" placeholder="Alguma informação adicional..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">AGENDAR VIA WHATSAPP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = '5531975659932';
+
+        // Formata data para pt-BR
+        function formatDate(date) {
+            return new Date(date).toLocaleDateString('pt-BR');
+        }
+
+        // Anamnese Form
+        document.getElementById('anamneseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('.btn-submit');
+            btn.classList.add('loading');
+            btn.textContent = 'ENVIANDO...';
+            
+            const nome = document.getElementById('nome').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+            const celular = document.getElementById('celular').value;
+            const profissao = document.getElementById('profissao').value;
+            const lenteContato = document.querySelector('input[name="lenteContato"]:checked').value;
+            const gestante = document.querySelector('input[name="gestante"]:checked').value;
+            const alergias = document.getElementById('alergias').value;
+            const medicamentos = document.getElementById('medicamentos').value;
+            
+            let mensagem = `*FICHA DE ANAMNESE - BEATRIZ LEÃO LASH*%0A%0A`;
+            mensagem += `*DADOS PESSOAIS*%0A`;
+            mensagem += `Nome: ${nome}%0A`;
+            mensagem += `Data de Nascimento: ${formatDate(dataNascimento)}%0A`;
+            mensagem += `Celular: ${celular}%0A`;
+            mensagem += `Profissão: ${profissao || 'Não informado'}%0A%0A`;
+            mensagem += `*HÁBITOS DIÁRIOS*%0A`;
+            mensagem += `Usa lente de contato: ${lenteContato === 'sim' ? 'Sim' : 'Não'}%0A`;
+            mensagem += `Gestante: ${gestante === 'sim' ? 'Sim' : 'Não'}%0A`;
+            mensagem += `Alergias: ${alergias || 'Não informado'}%0A`;
+            mensagem += `Medicamentos: ${medicamentos || 'Não informado'}%0A`;
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${mensagem}`, '_blank');
+                btn.classList.remove('loading');
+                btn.textContent = 'ENVIAR FICHA VIA WHATSAPP';
+                e.target.reset();
+            }, 500);
+        });
+
+        // Agendamento Form
+        document.getElementById('agendamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('.btn-submit');
+            btn.classList.add('loading');
+            btn.textContent = 'ENVIANDO...';
+            
+            const nome = document.getElementById('nomeAgendamento').value;
+            const celular = document.getElementById('celularAgendamento').value;
+            const data = document.getElementById('dataAgendamento').value;
+            const horario = document.getElementById('horarioAgendamento').value;
+            const observacoes = document.getElementById('observacoes').value;
+            
+            let mensagem = `*SOLICITAÇÃO DE AGENDAMENTO - BEATRIZ LEÃO LASH*%0A%0A`;
+            mensagem += `Nome: ${nome}%0A`;
+            mensagem += `Celular: ${celular}%0A`;
+            mensagem += `Data desejada: ${formatDate(data)}%0A`;
+            mensagem += `Horário desejado: ${horario}%0A`;
+            mensagem += `Observações: ${observacoes || 'Nenhuma'}%0A`;
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${mensagem}`, '_blank');
+                btn.classList.remove('loading');
+                btn.textContent = 'AGENDAR VIA WHATSAPP';
+                e.target.reset();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
