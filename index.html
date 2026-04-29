@@ -9,123 +9,152 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #FAF7F5; min-height: 100vh; }
         .header { background: #fff; padding: 24px 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
         .logo-img { max-width: 260px; width: 100%; height: auto; margin: 0 auto; display: block; }
-        
-        .tabs { 
-            display: flex; 
-            background: white; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
+
+        .tabs {
+            display: flex; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 100;
         }
-        .tab-button { 
-            flex: 1; 
-            padding: 18px; 
-            border: none; 
-            background: white; 
-            cursor: pointer; 
-            font-size: 15px; 
-            font-weight: 600; 
-            color: #7D6E5F; 
-            border-bottom: 3px solid transparent; 
-            transition: all 0.3s; 
+        .tab-button {
+            flex: 1; padding: 18px; border: none; background: white; cursor: pointer;
+            font-size: 15px; font-weight: 600; color: #7D6E5F;
+            border-bottom: 3px solid transparent; transition: all 0.3s;
         }
-        .tab-button.active { 
-            color: #5D4E3F; 
-            border-bottom-color: #A48968; 
-            background: #FDFCFB; 
-        }
-        .tab-content { 
-            display: none; 
-            padding: 25px 20px; 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
+        .tab-button.active { color: #5D4E3F; border-bottom-color: #A48968; background: #FDFCFB; }
+
+        .tab-content { display: none; padding: 25px 20px; max-width: 800px; margin: 0 auto; }
         .tab-content.active { display: block; }
 
-        /* Estilos Landing Page */
+        /* ── Landing Page ── */
         .landing-hero {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: center;
-            padding: 40px 0;
+            display: grid; grid-template-columns: 1.2fr 1fr;
+            gap: 40px; align-items: center; padding: 40px 0;
         }
         .hero-text h1 { font-size: 38px; color: #5D4E3F; line-height: 1.2; margin-bottom: 12px; }
         .hero-text .hero-tagline { font-size: 18px; font-weight: 700; color: #A48968; margin-bottom: 14px; letter-spacing: 0.3px; }
         .hero-text p { font-size: 16px; color: #7D6E5F; line-height: 1.6; margin-bottom: 30px; }
         .hero-image { position: relative; }
         .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        
         .floating-card {
-            position: absolute;
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            font-size: 13px;
-            color: #5D4E3F;
-            border: 1px solid #E0D5C7;
+            position: absolute; background: white; padding: 15px;
+            border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            font-size: 13px; color: #5D4E3F; border: 1px solid #E0D5C7;
             animation: float 4s ease-in-out infinite;
         }
         .card-top { top: -20px; right: -20px; }
         .card-bottom { bottom: 20px; left: -20px; animation-delay: 2s; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
         .cta-button {
-            display: inline-block;
-            padding: 16px 32px;
+            display: inline-block; padding: 16px 32px;
             background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(164, 137, 104, 0.4);
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 15px;
+            color: white; text-decoration: none; border-radius: 12px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(164,137,104,0.4); transition: all 0.3s;
+            cursor: pointer; border: none; font-size: 15px;
         }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(164, 137, 104, 0.5); }
-
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(164,137,104,0.5); }
         .section-title-landing { text-align: center; margin: 60px 0 40px; }
         .section-title-landing h2 { font-size: 28px; color: #5D4E3F; }
-
         .lash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .lash-card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #E0D5C7;
-            transition: all 0.3s;
+            background: white; padding: 20px; border-radius: 15px;
+            text-align: center; border: 1px solid #E0D5C7; transition: all 0.3s;
         }
         .lash-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .lash-card h3 { font-size: 18px; color: #5D4E3F; margin-bottom: 10px; }
         .lash-card p { font-size: 14px; color: #7D6E5F; }
-
         .about-section {
-            margin: 60px 0 20px;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            border: 1px solid #E0D5C7;
+            margin: 60px 0 20px; padding: 30px; background: white;
+            border-radius: 15px; border: 1px solid #E0D5C7;
         }
         .about-section h2 { font-size: 22px; color: #5D4E3F; margin-bottom: 14px; }
         .about-section p { font-size: 15px; color: #7D6E5F; line-height: 1.7; }
 
-        /* Estilos Existentes Refatorados */
-        .section-title { background: linear-gradient(135deg, #A48968 0%, #8B7355 100%); color: white; padding: 14px 20px; font-size: 16px; font-weight: 700; margin: 25px 0 20px; border-radius: 12px; text-align: center; }
+        /* ── Ficha / Agendamento ── */
+        .section-title {
+            background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
+            color: white; padding: 14px 20px; font-size: 16px; font-weight: 700;
+            margin: 25px 0 20px; border-radius: 12px; text-align: center;
+            box-shadow: 0 3px 10px rgba(164,137,104,0.3);
+        }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; color: #5D4E3F; font-size: 14px; font-weight: 600; }
-        input, textarea { width: 100%; padding: 14px; border: 2px solid #E0D5C7; border-radius: 10px; font-size: 15px; transition: all 0.3s; background: white; }
-        .button-group { display: flex; gap: 10px; flex-wrap: wrap; }
-        .option-btn { flex: 1; min-width: 120px; padding: 12px 20px; border: 2px solid #E0D5C7; border-radius: 10px; background: white; color: #7D6E5F; font-size: 15px; font-weight: 600; cursor: pointer; }
-        .option-btn.selected { background: #A48968; color: white; border-color: #A48968; }
-        .btn-submit { width: 100%; padding: 18px; border: none; border-radius: 12px; background: #A48968; color: white; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 16px; }
-        
+        input[type="text"], input[type="email"], input[type="tel"],
+        input[type="date"], input[type="time"], textarea {
+            width: 100%; padding: 14px; border: 2px solid #E0D5C7;
+            border-radius: 10px; font-size: 15px; transition: all 0.3s;
+            background: white; font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: none; border-color: #A48968;
+            box-shadow: 0 0 0 3px rgba(164,137,104,0.1);
+        }
+        textarea { min-height: 100px; resize: vertical; }
+        .button-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .option-btn {
+            flex: 1; min-width: 120px; padding: 12px 20px;
+            border: 2px solid #E0D5C7; border-radius: 10px; background: white;
+            color: #7D6E5F; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s;
+        }
+        .option-btn.selected {
+            background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
+            color: white; border-color: #A48968;
+            box-shadow: 0 4px 15px rgba(164,137,104,0.3);
+        }
+
+        /* Termo */
+        .termo-container {
+            background: #FFF9F5; border: 2px solid #E0D5C7;
+            border-radius: 14px; padding: 0; margin: 25px 0 10px; overflow: hidden;
+        }
+        .termo-header {
+            background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
+            color: white; text-align: center; padding: 12px 16px;
+            font-weight: 700; font-size: 14px; letter-spacing: 1px;
+        }
+        .termo-body {
+            height: 200px; overflow-y: scroll; padding: 16px 18px;
+            font-size: 14px; line-height: 1.7; color: #4A3D32;
+            background: #FFFCF9; border-bottom: 2px solid #E0D5C7; scroll-behavior: smooth;
+        }
+        .termo-body p { margin-bottom: 10px; }
+        .termo-progress-bar-wrap { height: 4px; background: #E0D5C7; }
+        .termo-progress-bar { height: 4px; width: 0%; background: linear-gradient(90deg, #A48968, #8B7355); transition: width 0.2s; }
+        .termo-scroll-hint {
+            text-align: center; font-size: 12px; padding: 8px 12px;
+            font-style: italic; display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+        .termo-scroll-hint.pending { color: #A48968; }
+        .termo-scroll-hint.done { color: #5a9a5a; font-style: normal; font-weight: 600; }
+        .termo-check-area {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 14px 18px; background: #FAF7F5;
+            border-top: 1px solid #E0D5C7; transition: opacity 0.3s;
+        }
+        .termo-check-area.locked { opacity: 0.4; pointer-events: none; }
+        .termo-check-area input[type="checkbox"] {
+            width: 20px; height: 20px; min-width: 20px;
+            accent-color: #A48968; cursor: pointer; margin-top: 2px;
+        }
+        .termo-check-area label {
+            font-size: 13px; color: #5D4E3F; font-weight: 500;
+            margin: 0; cursor: pointer; line-height: 1.5;
+        }
+
+        .btn-submit {
+            width: 100%; padding: 18px; border: none; border-radius: 12px;
+            background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
+            color: white; font-size: 16px; font-weight: 700; cursor: pointer;
+            margin-top: 16px; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(164,137,104,0.4); transition: all 0.3s;
+        }
+        .btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(164,137,104,0.5); }
+        .btn-submit:disabled { background: #C8BFB5; box-shadow: none; cursor: not-allowed; transform: none; }
+        .aviso-termo {
+            display: none; background: #fff3cd; border: 1px solid #ffc107;
+            color: #856404; border-radius: 10px; padding: 12px 16px;
+            font-size: 13px; margin-top: 10px; text-align: center;
+        }
+
         @media (max-width: 768px) {
             .landing-hero { grid-template-columns: 1fr; text-align: center; }
             .hero-image { order: -1; }
@@ -146,7 +175,7 @@
         <button class="tab-button" onclick="showTab('agendamento', this)">Agendamento</button>
     </div>
 
-    <!-- ABA INÍCIO (LANDING PAGE) -->
+    <!-- ABA INÍCIO -->
     <div id="tab-inicio" class="tab-content active">
         <div class="landing-hero">
             <div class="hero-text">
@@ -161,10 +190,7 @@
                 <div class="floating-card card-bottom">Materiais Premium</div>
             </div>
         </div>
-
-        <div class="section-title-landing">
-            <h2>Nossos Estilos</h2>
-        </div>
+        <div class="section-title-landing"><h2>Nossos Estilos</h2></div>
         <div class="lash-grid">
             <div class="lash-card">
                 <h3>Volume Brasileiro</h3>
@@ -179,7 +205,6 @@
                 <p>Alongamento dramático inspirado no glamour do Egito.</p>
             </div>
         </div>
-
         <div class="about-section">
             <h2>Sobre Beatriz Leão</h2>
             <p>Com experiência em Lash Design, Beatriz Leão construiu sua carreira com dedicação, técnica apurada e um olhar refinado para a beleza feminina. Cada atendimento é tratado de forma única, respeitando o formato do olho e o estilo de vida de cada cliente. Beatriz se especializou nas principais técnicas do mercado e trabalha exclusivamente com materiais de alta qualidade, garantindo conforto, durabilidade e um resultado que realça sua beleza sem exageros.</p>
@@ -188,45 +213,163 @@
 
     <!-- ABA FICHA DE ANAMNESE -->
     <div id="tab-ficha" class="tab-content">
+
         <div class="section-title">Dados Pessoais</div>
         <div class="form-group">
             <label>Nome completo *</label>
-            <input type="text" id="nome" placeholder="Seu nome completo">
+            <input type="text" id="nome" placeholder="Seu nome completo" required>
         </div>
         <div class="form-group">
             <label>Data de nascimento *</label>
-            <input type="date" id="nascimento">
+            <input type="date" id="nascimento" required>
         </div>
         <div class="form-group">
             <label>Telefone / WhatsApp *</label>
-            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
         </div>
 
         <div class="section-title">Procedimento</div>
-        <label>Qual procedimento deseja realizar?</label>
-        <div class="button-group">
-            <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Brasileiro</button>
-            <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Power</button>
-            <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Egípcio</button>
+        <div class="form-group">
+            <label>Qual procedimento deseja realizar?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Brasileiro</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Power</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Egípcio</button>
+                <button class="option-btn" onclick="toggle(this, 'proc_ficha')">Volume Fox Eyes</button>
+            </div>
         </div>
 
-        <button class="btn-submit" onclick="enviarFicha()">Enviar Ficha via WhatsApp</button>
+        <div class="section-title">Informações sobre os Olhos</div>
+        <div class="form-group">
+            <label>Você usa lentes de contato?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'lentes')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'lentes')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tem olhos sensíveis ou irritados facilmente?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'sensivel')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'sensivel')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Possui alguma alergia conhecida? (cosméticos, adesivos, látex)</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'alergia')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'alergia')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Se sim, qual alergia?</label>
+            <textarea id="qual_alergia" placeholder="Descreva a alergia, se houver..."></textarea>
+        </div>
+
+        <div class="section-title">Saúde Geral</div>
+        <div class="form-group">
+            <label>Faz uso de algum medicamento contínuo?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'medicamento')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'medicamento')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Se sim, qual medicamento?</label>
+            <textarea id="qual_medicamento" placeholder="Nome do medicamento, se houver..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Já fez extensão de cílios antes?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'extensao')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'extensao')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Teve alguma reação anterior a extensões?</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'reacao')">Sim</button>
+                <button class="option-btn" onclick="toggle(this, 'reacao')">Não</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Observações adicionais</label>
+            <textarea id="observacoes" placeholder="Algo que acha importante informar..."></textarea>
+        </div>
+
+        <div class="section-title">Termo de Responsabilidade</div>
+        <p style="font-size:13px;color:#7D6E5F;margin-bottom:12px;text-align:center;">
+            <strong>Leia o termo completamente antes de prosseguir.</strong>
+        </p>
+
+        <div class="termo-container">
+            <div class="termo-header">TERMO DE RESPONSABILIDADE — EXTENSÃO DE CÍLIOS</div>
+            <div class="termo-body" id="termoBody">
+                <p><strong>IDENTIFICAÇÃO DAS PARTES:</strong> Este termo é celebrado entre <strong>Beatriz Leão – Lash Designer</strong> (doravante PRESTADORA) e a cliente identificada nesta ficha (doravante CLIENTE).</p>
+                <p><strong>1. DO PROCEDIMENTO:</strong> A extensão de cílios é um procedimento estético que consiste na aplicação de fios sintéticos nos cílios naturais com cola específica para uso cosmético, visando aumentar o volume e/ou comprimento dos cílios.</p>
+                <p><strong>2. RISCOS E CONTRAINDICAÇÕES:</strong> A CLIENTE declara estar ciente de que o procedimento pode apresentar riscos em casos de alergia a adesivos, cola de cianoacrilato, fita adesiva, látex ou qualquer componente utilizado. Reações alérgicas podem incluir vermelhidão, inchaço, coceira e, em casos raros, reações sistêmicas.</p>
+                <p><strong>3. RESPONSABILIDADES DA CLIENTE:</strong> A CLIENTE compromete-se a informar com veracidade todas as condições de saúde, alergias, uso de medicamentos e procedimentos anteriores. A omissão de informações relevantes isenta a PRESTADORA de qualquer responsabilidade por reações adversas.</p>
+                <p><strong>4. CUIDADOS PÓS-PROCEDIMENTO:</strong> A CLIENTE declara ter sido orientada sobre os cuidados necessários: evitar água nos primeiros 24 horas, não usar maquiagem oleosa, não esfregar os olhos, não usar rímel convencional e retornar para manutenções conforme recomendado.</p>
+                <p><strong>5. RESULTADOS:</strong> A CLIENTE compreende que o resultado do procedimento pode variar de acordo com a qualidade dos cílios naturais, o estilo de vida e o seguimento das instruções de cuidado. Não há garantia de resultado idêntico a referências fotográficas.</p>
+                <p><strong>6. TESTE DE SENSIBILIDADE:</strong> Caso a CLIENTE apresente histórico de sensibilidade, é recomendado o teste de alergia prévio, cuja realização é de responsabilidade da CLIENTE solicitar com antecedência mínima de 48 horas.</p>
+                <p><strong>7. ISENÇÃO DE RESPONSABILIDADE:</strong> A PRESTADORA não se responsabiliza por reações decorrentes de informações omitidas ou incorretas fornecidas pela CLIENTE, nem por danos causados pelo descumprimento das orientações de cuidado pós-procedimento.</p>
+                <p><strong>8. CONSENTIMENTO:</strong> Ao assinalar a confirmação abaixo, a CLIENTE declara ter lido integralmente este Termo, compreendido seu conteúdo, e consente livremente com a realização do procedimento, assumindo as responsabilidades aqui descritas.</p>
+                <p style="text-align:center;color:#A48968;font-style:italic;margin-top:16px;">— Fim do Termo de Responsabilidade —</p>
+            </div>
+            <div class="termo-progress-bar-wrap">
+                <div class="termo-progress-bar" id="termoProgressBar"></div>
+            </div>
+            <div class="termo-scroll-hint pending" id="termoHint">Role até o final para liberar a confirmação</div>
+            <div class="termo-check-area locked" id="termoCheckArea">
+                <input type="checkbox" id="termoCheck" onchange="atualizarBotao()">
+                <label for="termoCheck">
+                    Li e aceito integralmente o Termo de Responsabilidade acima e autorizo a realização do procedimento de extensão de cílios.
+                </label>
+            </div>
+        </div>
+
+        <div class="aviso-termo" id="avisoTermo">
+            Você precisa <strong>ler o termo completo</strong> e <strong>marcar a confirmação</strong> antes de enviar.
+        </div>
+
+        <button class="btn-submit" id="btnEnviar" onclick="enviarFicha()">Enviar Ficha via WhatsApp</button>
     </div>
 
     <!-- ABA AGENDAMENTO -->
     <div id="tab-agendamento" class="tab-content">
-        <div class="section-title">Solicitar Horário</div>
+        <div class="section-title">Agendar Horário</div>
         <div class="form-group">
             <label>Seu nome *</label>
-            <input type="text" id="ag_nome" placeholder="Seu nome completo">
+            <input type="text" id="ag_nome" placeholder="Seu nome completo" required>
         </div>
         <div class="form-group">
             <label>Telefone / WhatsApp *</label>
-            <input type="tel" id="ag_telefone" placeholder="(00) 00000-0000">
+            <input type="tel" id="ag_telefone" placeholder="(00) 00000-0000" required>
+        </div>
+        <div class="form-group">
+            <label>Procedimento desejado</label>
+            <div class="button-group">
+                <button class="option-btn" onclick="toggle(this, 'proc')">Volume Brasileiro</button>
+                <button class="option-btn" onclick="toggle(this, 'proc')">Volume Power</button>
+                <button class="option-btn" onclick="toggle(this, 'proc')">Volume Egípcio</button>
+                <button class="option-btn" onclick="toggle(this, 'proc')">Volume Fox Eyes</button>
+            </div>
         </div>
         <div class="form-group">
             <label>Data preferida</label>
             <input type="date" id="ag_data">
+        </div>
+        <div class="form-group">
+            <label>Horário preferido</label>
+            <input type="time" id="ag_hora">
+        </div>
+        <div class="form-group">
+            <label>Observações</label>
+            <textarea id="ag_obs" placeholder="Alguma observação sobre o agendamento?"></textarea>
         </div>
         <button class="btn-submit" onclick="enviarAgendamento()">Solicitar Agendamento via WhatsApp</button>
     </div>
@@ -248,19 +391,78 @@
         }
 
         function getSelected(grupo) {
-            const btn = document.querySelector('.option-btn.selected');
-            return btn ? btn.textContent : 'Não informado';
+            const selected = document.querySelector(`.option-btn.selected[onclick*="'${grupo}'"]`);
+            return selected ? selected.textContent.trim() : null;
+        }
+
+        const termoBody = document.getElementById('termoBody');
+        const termoCheckArea = document.getElementById('termoCheckArea');
+        const termoHint = document.getElementById('termoHint');
+        const termoProgressBar = document.getElementById('termoProgressBar');
+        let termoLido = false;
+
+        termoBody.addEventListener('scroll', function () {
+            const scrollTop = termoBody.scrollTop;
+            const scrollHeight = termoBody.scrollHeight - termoBody.clientHeight;
+            const progresso = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 100;
+            termoProgressBar.style.width = Math.min(progresso, 100) + '%';
+            if (scrollTop + termoBody.clientHeight >= termoBody.scrollHeight - 10) {
+                if (!termoLido) {
+                    termoLido = true;
+                    termoCheckArea.classList.remove('locked');
+                    termoHint.classList.remove('pending');
+                    termoHint.classList.add('done');
+                    termoHint.textContent = 'Termo lido! Agora confirme sua leitura abaixo.';
+                }
+            }
+        });
+
+        function atualizarBotao() {
+            document.getElementById('avisoTermo').style.display = 'none';
         }
 
         function enviarFicha() {
-            const nome = document.getElementById('nome').value;
-            const msg = `FICHA DE ANAMNESE\nNome: ${nome}\nProcedimento: ${getSelected('proc_ficha')}`;
+            const check = document.getElementById('termoCheck');
+            const aviso = document.getElementById('avisoTermo');
+            if (!termoLido || !check.checked) {
+                aviso.style.display = 'block';
+                if (!termoLido) termoBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return;
+            }
+            const nome = document.getElementById('nome').value.trim();
+            const nascimento = document.getElementById('nascimento').value;
+            const telefone = document.getElementById('telefone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            if (!nome || !nascimento || !telefone) {
+                alert('Por favor, preencha os campos obrigatórios: Nome, Data de nascimento e Telefone.');
+                return;
+            }
+            const proc_ficha = getSelected('proc_ficha') || 'Não informado';
+            const lentes = getSelected('lentes') || 'Não informado';
+            const sensivel = getSelected('sensivel') || 'Não informado';
+            const alergia = getSelected('alergia') || 'Não informado';
+            const qualAlergia = document.getElementById('qual_alergia').value.trim() || '-';
+            const medicamento = getSelected('medicamento') || 'Não informado';
+            const qualMedicamento = document.getElementById('qual_medicamento').value.trim() || '-';
+            const extensao = getSelected('extensao') || 'Não informado';
+            const reacao = getSelected('reacao') || 'Não informado';
+            const obs = document.getElementById('observacoes').value.trim() || '-';
+            const msg = `FICHA DE ANAMNESE - EXTENSAO DE CILIOS\n--------------------\nDADOS PESSOAIS\nNome: ${nome}\nNascimento: ${nascimento}\nTelefone: ${telefone}\nE-mail: ${email || '-'}\n\nPROCEDIMENTO\nProcedimento: ${proc_ficha}\n\nINFORMACOES DOS OLHOS\nUsa lentes de contato: ${lentes}\nOlhos sensiveis: ${sensivel}\nTem alergia: ${alergia}\nQual alergia: ${qualAlergia}\n\nSAUDE GERAL\nUsa medicamento: ${medicamento}\nQual medicamento: ${qualMedicamento}\nJa fez extensao antes: ${extensao}\nReacao anterior: ${reacao}\nObservacoes: ${obs}\n\nTERMO DE RESPONSABILIDADE: LIDO E ACEITO\n--------------------`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function enviarAgendamento() {
-            const nome = document.getElementById('ag_nome').value;
-            const msg = `SOLICITAÇÃO DE AGENDAMENTO\nNome: ${nome}`;
+            const nome = document.getElementById('ag_nome').value.trim();
+            const telefone = document.getElementById('ag_telefone').value.trim();
+            if (!nome || !telefone) {
+                alert('Por favor, preencha seu nome e telefone.');
+                return;
+            }
+            const proc = getSelected('proc') || 'Não informado';
+            const data = document.getElementById('ag_data').value || 'A combinar';
+            const hora = document.getElementById('ag_hora').value || 'A combinar';
+            const obs = document.getElementById('ag_obs').value.trim() || '-';
+            const msg = `SOLICITACAO DE AGENDAMENTO - LASH DESIGNER\n--------------------\nNome: ${nome}\nTelefone: ${telefone}\nProcedimento: ${proc}\nData preferida: ${data}\nHorario preferido: ${hora}\nObservacoes: ${obs}\n--------------------`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
