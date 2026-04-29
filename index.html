@@ -51,7 +51,8 @@
             align-items: center;
             padding: 40px 0;
         }
-        .hero-text h1 { font-size: 38px; color: #5D4E3F; line-height: 1.2; margin-bottom: 20px; }
+        .hero-text h1 { font-size: 38px; color: #5D4E3F; line-height: 1.2; margin-bottom: 12px; }
+        .hero-text .hero-tagline { font-size: 18px; font-weight: 700; color: #A48968; margin-bottom: 14px; letter-spacing: 0.3px; }
         .hero-text p { font-size: 16px; color: #7D6E5F; line-height: 1.6; margin-bottom: 30px; }
         .hero-image { position: relative; }
         .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
@@ -83,6 +84,9 @@
             letter-spacing: 1px;
             box-shadow: 0 5px 15px rgba(164, 137, 104, 0.4);
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 15px;
         }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(164, 137, 104, 0.5); }
 
@@ -99,9 +103,18 @@
             transition: all 0.3s;
         }
         .lash-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .lash-icon { font-size: 40px; margin-bottom: 15px; display: block; }
         .lash-card h3 { font-size: 18px; color: #5D4E3F; margin-bottom: 10px; }
         .lash-card p { font-size: 14px; color: #7D6E5F; }
+
+        .about-section {
+            margin: 60px 0 20px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            border: 1px solid #E0D5C7;
+        }
+        .about-section h2 { font-size: 22px; color: #5D4E3F; margin-bottom: 14px; }
+        .about-section p { font-size: 15px; color: #7D6E5F; line-height: 1.7; }
 
         /* Estilos Existentes Refatorados */
         .section-title { background: linear-gradient(135deg, #A48968 0%, #8B7355 100%); color: white; padding: 14px 20px; font-size: 16px; font-weight: 700; margin: 25px 0 20px; border-radius: 12px; text-align: center; }
@@ -137,14 +150,15 @@
     <div id="tab-inicio" class="tab-content active">
         <div class="landing-hero">
             <div class="hero-text">
+                <p class="hero-tagline">Acorde pronta todos os dias.</p>
                 <h1>Cílios elegantes com a sua personalidade.</h1>
                 <p>Realce o seu olhar com técnicas exclusivas de Lash Design. Atendimento personalizado para realçar sua beleza natural com sofisticação e segurança.</p>
-                <a href="https://wa.me/5531975659932?text=Olá, quero agendar meu atendimento!" class="cta-button" target="_blank">Agendar agora</a>
+                <button class="cta-button" onclick="showTab('agendamento', document.querySelectorAll('.tab-button')[2])">Agendar agora</button>
             </div>
             <div class="hero-image">
                 <img src="lash.png" alt="Trabalho de Lash Design">
-                <div class="floating-card card-top">✨ Atendimento Personalizado</div>
-                <div class="floating-card card-bottom">🌿 Materiais Premium</div>
+                <div class="floating-card card-top">Atendimento Personalizado</div>
+                <div class="floating-card card-bottom">Materiais Premium</div>
             </div>
         </div>
 
@@ -153,20 +167,22 @@
         </div>
         <div class="lash-grid">
             <div class="lash-card">
-                <span class="lash-icon">👁️</span>
-                <h3>Fio a Fio</h3>
-                <p>Resultado natural e delicado para o dia a dia.</p>
-            </div>
-            <div class="lash-card">
-                <span class="lash-icon">✨</span>
                 <h3>Volume Brasileiro</h3>
                 <p>Equilíbrio perfeito entre preenchimento e leveza.</p>
             </div>
             <div class="lash-card">
-                <span class="lash-icon">💎</span>
-                <h3>Volume Glam</h3>
-                <p>Máximo destaque para um olhar marcante.</p>
+                <h3>Volume Power</h3>
+                <p>Máximo volume para um olhar poderoso e marcante.</p>
             </div>
+            <div class="lash-card">
+                <h3>Volume Egípcio</h3>
+                <p>Alongamento dramático inspirado no glamour do Egito.</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Sobre Beatriz Leão</h2>
+            <p>Com anos de experiência em Lash Design, Beatriz Leão construiu sua carreira com dedicação, técnica apurada e um olhar refinado para a beleza feminina. Cada atendimento é tratado de forma única, respeitando o formato do olho e o estilo de vida de cada cliente. Beatriz se especializou nas principais técnicas do mercado e trabalha exclusivamente com materiais de alta qualidade, garantindo conforto, durabilidade e um resultado que realça sua beleza sem exageros.</p>
         </div>
     </div>
 
@@ -222,7 +238,7 @@
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
             document.getElementById('tab-' + tab).classList.add('active');
-            btn.classList.add('active');
+            if (btn) btn.classList.add('active');
         }
 
         function toggle(btn, grupo) {
@@ -238,16 +254,13 @@
 
         function enviarFicha() {
             const nome = document.getElementById('nome').value;
-            const msg = `FICHA DE ANAMNESE
-Nome: ${nome}
-Procedimento: ${getSelected('proc_ficha')}`;
+            const msg = `FICHA DE ANAMNESE\nNome: ${nome}\nProcedimento: ${getSelected('proc_ficha')}`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function enviarAgendamento() {
             const nome = document.getElementById('ag_nome').value;
-            const msg = `SOLICITAÇÃO DE AGENDAMENTO
-Nome: ${nome}`;
+            const msg = `SOLICITAÇÃO DE AGENDAMENTO\nNome: ${nome}`;
             window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
