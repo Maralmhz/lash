@@ -69,6 +69,56 @@
         .about-section h2 { font-size: 22px; color: #5D4E3F; margin-bottom: 14px; }
         .about-section p { font-size: 15px; color: #7D6E5F; line-height: 1.7; }
 
+        /* ── Catálogo Section ── */
+        .catalogo-section {
+            margin: 50px 0 20px;
+            text-align: center;
+        }
+        .catalogo-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .catalogo-section-header::before,
+        .catalogo-section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #C9B49A, transparent);
+        }
+        .catalogo-section-header h2 {
+            font-size: 26px;
+            color: #5D4E3F;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .catalogo-wrapper {
+            display: inline-block;
+            background: white;
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 12px 40px rgba(164,137,104,0.18), 0 2px 8px rgba(0,0,0,0.06);
+            border: 1.5px solid #E8DDD2;
+            animation: fadeInUp 0.7s ease both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .catalogo-wrapper img {
+            display: block;
+            max-width: 480px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        .catalogo-cta {
+            margin-top: 22px;
+            display: block;
+        }
+
         /* ── Ficha / Agendamento ── */
         .section-title {
             background: linear-gradient(135deg, #A48968 0%, #8B7355 100%);
@@ -160,6 +210,7 @@
             .hero-image { order: -1; }
             .lash-grid { grid-template-columns: 1fr; }
             .card-top, .card-bottom { position: static; margin: 10px auto; animation: none; }
+            .catalogo-wrapper { padding: 10px; }
         }
     </style>
 </head>
@@ -190,6 +241,20 @@
                 <div class="floating-card card-bottom">Materiais Premium</div>
             </div>
         </div>
+
+        <!-- CATÁLOGO -->
+        <div class="catalogo-section">
+            <div class="catalogo-section-header">
+                <h2>Catálogo de Serviços</h2>
+            </div>
+            <div class="catalogo-wrapper">
+                <img src="catalogo.png" alt="Catálogo Beatriz Leão - Extensão de Cílios">
+            </div>
+            <span class="catalogo-cta">
+                <button class="cta-button" onclick="showTab('agendamento', document.querySelectorAll('.tab-button')[2])">Quero agendar</button>
+            </span>
+        </div>
+
         <div class="section-title-landing"><h2>Nossos Estilos</h2></div>
         <div class="lash-grid">
             <div class="lash-card">
